@@ -1,7 +1,7 @@
 {
   "name": "@ngstack/translate",
   "description": "Translation library for Angular and Ionic applications.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "author": {
     "name": "Denys Vuika",
@@ -10,17 +10,18 @@
   },
   "keywords": [
     "angular",
+    "ionic",
     "translation",
     "i18n",
     "localization"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ngstack/core.git"
+    "url": "https://github.com/ngstack/translate.git"
   },
-  "homepage": "https://github.com/ngstack/core/tree/master/projects/translate",
+  "homepage": "https://github.com/ngstack/translate",
   "bugs": {
-    "url": "https://github.com/ngstack/core/issues"
+    "url": "https://github.com/ngstack/translate/issues"
   },
   "peerDependencies": {
     "@angular/common": "^6.0.0",
