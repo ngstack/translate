@@ -1,5 +1,16 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import {
+  Injectable,
+  EventEmitter,
+  Inject,
+  InjectionToken,
+  Optional
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TranslateSettings } from './translate.settings';
+
+export const TRANSLATE_SETTINGS = new InjectionToken<TranslateSettings>(
+  'TRANSLATE_SETTINGS'
+);
 
 export interface TranslateParams {
   [key: string]: string;
@@ -7,7 +18,7 @@ export interface TranslateParams {
 
 @Injectable()
 export class TranslateService {
-  private data: { [key: string]: any } = {};
+  protected data: { [key: string]: any } = {};
   private _fallbackLang = 'en';
   private _activeLang = 'en';
   private _translationRoot = 'assets/i18n';
@@ -100,7 +111,42 @@ export class TranslateService {
     currentValue: string;
   }>();
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Optional()
+    @Inject(TRANSLATE_SETTINGS)
+    settings: TranslateSettings
+  ) {
+    this.applySettings(settings);
+  }
+
+  protected applySettings(settings: TranslateSettings) {
+    const {
+      debugMode,
+      disableCache,
+      supportedLangs,
+      translatePaths,
+      translationRoot,
+      activeLang
+    } = this;
+
+    const defaults = {
+      debugMode,
+      disableCache,
+      supportedLangs,
+      translatePaths,
+      translationRoot,
+      activeLang,
+      ...settings
+    };
+
+    this.debugMode = defaults.debugMode;
+    this.disableCache = defaults.disableCache;
+    this.supportedLangs = defaults.supportedLangs;
+    this.translatePaths = defaults.translatePaths;
+    this.translationRoot = defaults.translationRoot;
+    this.activeLang = defaults.activeLang;
+  }
 
   /**
    * Get translated string
@@ -122,6 +168,11 @@ export class TranslateService {
       return null;
     }
   }
+
+  load(): Promise<any> {
+    return this.use(this.activeLang);
+  }
+
   /**
    * Load the translation file or use provided data for the given language.
    *
@@ -149,14 +200,14 @@ export class TranslateService {
 
     for (const path of filePaths) {
       const filePath = `${path}/${fileName}`;
-      await this.load(lang, filePath);
+      await this.loadTranslation(lang, filePath);
     }
 
     return this.data[lang] || {};
   }
 
-  private load(lang: string, path: string): Promise<any> {
-    return new Promise<any>((resolve, reject) => {
+  protected loadTranslation(lang: string, path: string): Promise<any> {
+    return new Promise<any>(resolve => {
       if (this.disableCache) {
         path += `?v=${Date.now()}`;
       }
@@ -165,14 +216,14 @@ export class TranslateService {
         json => {
           resolve(this.setTranslation(lang, json));
         },
-        error => {
+        () => {
           resolve(this.data[lang] || {});
         }
       );
     });
   }
 
-  private isNotSupported(lang): boolean {
+  protected isNotSupported(lang): boolean {
     return (
       lang !== this.fallbackLang &&
       lang !== this.activeLang &&
@@ -182,7 +233,7 @@ export class TranslateService {
     );
   }
 
-  private getValue(lang: string, key: string): string {
+  protected getValue(lang: string, key: string): string {
     let data = this.data[lang];
     if (this.isNotSupported(lang)) {
       data = this.data[this.fallbackLang];
@@ -211,14 +262,14 @@ export class TranslateService {
     return data;
   }
 
-  private setTranslation(lang: string, data: any): any {
+  protected setTranslation(lang: string, data: any): any {
     let finalResult = this.data[lang] || {};
     finalResult = this.merge(finalResult, data || {});
     this.data[lang] = finalResult;
     return finalResult;
   }
 
-  private merge(...translations): any {
+  protected merge(...translations): any {
     const result = {};
 
     translations.forEach(translation => {
@@ -236,7 +287,7 @@ export class TranslateService {
     return result;
   }
 
-  private format(str: string, params: TranslateParams): string {
+  protected format(str: string, params: TranslateParams): string {
     let result = str;
 
     if (params) {

@@ -1,8 +1,8 @@
-import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
 import { TranslateService } from './translate.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 describe('TranslateService', () => {
   let translate: TranslateService;
@@ -18,12 +18,12 @@ describe('TranslateService', () => {
     http = TestBed.get(HttpClient);
   });
 
-  it(
-    'should be created',
-    inject([TranslateService], (service: TranslateService) => {
+  it('should be created', inject(
+    [TranslateService],
+    (service: TranslateService) => {
       expect(service).toBeTruthy();
-    })
-  );
+    }
+  ));
 
   it('should fetch and return translation data on use', async () => {
     const translation = { title: 'hello' };

@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
-import { TranslateModule } from '@ngstack/translate';
+import { TranslateModule, TranslateService } from '@ngstack/translate';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -22,6 +22,10 @@ const routes: Route[] = [
   }
 ];
 
+export function setupTranslateService(service: TranslateService) {
+  return () => service.load();
+}
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -34,6 +38,14 @@ const routes: Route[] = [
     MatSelectModule
   ],
   declarations: [AppComponent, TranslateDemoComponent, CustomTranslatePipe],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateService,
+      deps: [TranslateService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

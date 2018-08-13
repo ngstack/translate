@@ -29,13 +29,19 @@ Create `en.json` file in the `src/app/assets/i18n` folder of your application.
 ```
 
 Import `TranslateModule` into you main application module,
-configure `TranslateService` to start during application startup.
+configure `TranslateService` to load during application startup.
 
 You will also need `HttpClientModule` module dependency.
 
 ```ts
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngstack/translate';
+
+// needed to load translation before application starts
+export function setupTranslateService(service: TranslateService) {
+  return () => service.load();
+}
 
 @NgModule({
   imports: [
@@ -44,6 +50,15 @@ import { TranslateModule } from '@ngstack/translate';
     TranslateModule.forRoot({
       activeLang: 'en'
     })
+  ],
+  providers: [
+    // needed to load translation before application starts
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateService,
+      deps: [TranslateService],
+      multi: true
+    }
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
