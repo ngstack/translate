@@ -50,7 +50,7 @@ export function setupTranslateService(service: TranslateService) {
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      activeLang: 'en'
+      // options
     })
   ],
   providers: [
