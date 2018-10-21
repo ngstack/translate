@@ -50,7 +50,7 @@ export function setupTranslateService(service: TranslateService) {
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      activeLang: 'en'
+      // options
     })
   ],
   providers: [
@@ -309,6 +309,17 @@ You can disable browser caching and force application always load translation fi
 ```ts
 TranslateModule.forRoot({
   disableCache: true
+});
+```
+
+### Define active language
+
+The service takes browser language as an active language at startup.
+You can use `activeLang` property to define a custom value and override browser settings.
+
+```ts
+TranslateModule.forRoot({
+  activeLang: 'fr'
 });
 ```
 

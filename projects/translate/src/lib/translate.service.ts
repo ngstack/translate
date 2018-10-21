@@ -22,8 +22,16 @@ export interface TranslateParams {
 export class TranslateService {
   protected data: { [key: string]: any } = {};
   private _fallbackLang = 'en';
-  private _activeLang = 'en';
+  private _activeLang;
   private _translationRoot = 'assets/i18n';
+
+  /**
+   * Raised each time active language gets changed.
+   */
+  activeLangChanged = new EventEmitter<{
+    previousValue: string;
+    currentValue: string;
+  }>();
 
   /**
    * Toggles debug mode.
@@ -93,6 +101,14 @@ export class TranslateService {
     }
   }
 
+  getBrowserLanguage(): string {
+    const [lang /*, locale*/] = navigator.language
+      .replace('-', '_')
+      .toLowerCase()
+      .split('_');
+    return lang;
+  }
+
   /**
    * The root path to use when loading default translation files.
    * Defaults to 'assets/i18n'.
@@ -104,14 +120,6 @@ export class TranslateService {
   set translationRoot(value: string) {
     this._translationRoot = value || 'assets/i18n';
   }
-
-  /**
-   * Raised each time active language gets changed.
-   */
-  activeLangChanged = new EventEmitter<{
-    previousValue: string;
-    currentValue: string;
-  }>();
 
   constructor(
     private http: HttpClient,
@@ -147,7 +155,7 @@ export class TranslateService {
     this.supportedLangs = defaults.supportedLangs;
     this.translatePaths = defaults.translatePaths;
     this.translationRoot = defaults.translationRoot;
-    this.activeLang = defaults.activeLang;
+    this._activeLang = defaults.activeLang || this.getBrowserLanguage();
   }
 
   /**
@@ -171,7 +179,8 @@ export class TranslateService {
     }
   }
 
-  load(): Promise<any> {
+  async load(): Promise<any> {
+    await this.use(this.fallbackLang);
     return this.use(this.activeLang);
   }
 
