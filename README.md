@@ -312,6 +312,17 @@ TranslateModule.forRoot({
 });
 ```
 
+### Define active language
+
+The service takes browser language as an active language at startup.
+You can use `activeLang` property to define a custom value and override browser settings.
+
+```ts
+TranslateModule.forRoot({
+  activeLang: 'fr'
+});
+```
+
 ### Restricting supported languages
 
 It is possible to restrict supported languages to a certain set of values.

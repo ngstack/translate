@@ -31,9 +31,7 @@ export function setupTranslateService(service: TranslateService) {
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
-    TranslateModule.forRoot({
-      activeLang: 'en'
-    }),
+    TranslateModule.forRoot(),
     MatButtonModule,
     MatSelectModule
   ],
