@@ -25,6 +25,21 @@ describe('TranslateService', () => {
     }
   ));
 
+  it('should fetch fallback and then active lang translations', async () => {
+    spyOn(http, 'get').and.returnValue(of({}));
+
+    translate.fallbackLang = 'en';
+    translate.activeLang = 'fr';
+
+    const api = spyOn(translate, 'use').and.callFake(() => Promise.resolve({}));
+
+    await translate.load();
+
+    expect(api.calls.count()).toBe(2);
+    expect(api.calls.argsFor(0)).toEqual(['en']);
+    expect(api.calls.argsFor(1)).toEqual(['fr']);
+  });
+
   it('should fetch and return translation data on use', async () => {
     const translation = { title: 'hello' };
     spyOn(http, 'get').and.returnValue(of(translation));
