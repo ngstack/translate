@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 
 import { TranslateService } from './translate.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -579,31 +579,42 @@ describe('TranslateService', () => {
     );
   });
 
-  it('should raise an event each time language is changed', done => {
+  it('should raise an event each time language is changed', fakeAsync(() => {
     translate.activeLang = 'en';
-    translate.activeLangChanged.subscribe(done);
-    translate.activeLang = 'fr';
-  });
 
-  it('should raise an event only when language value is changed', async done => {
-    await translate.use('en', { key: 'value ' });
-    await translate.use('fr', { key: 'value ' });
-    await translate.use('it', { key: 'value ' });
+    spyOn(translate, 'use').and.returnValue(Promise.resolve({}));
+
+    let raised = false;
+    translate.activeLangChanged.subscribe(() => {
+      raised = true;
+    });
+
+    translate.activeLang = 'fr';
+    tick(200);
+
+    expect(raised).toBeTruthy();
+  }));
+
+  it('should raise an event only when language value is changed', fakeAsync(done => {
+    translate.use('en', { key: 'value ' });
+    translate.use('fr', { key: 'value ' });
+    translate.use('it', { key: 'value ' });
 
     translate.activeLang = 'en';
 
     let count = 0;
     translate.activeLangChanged.subscribe(() => {
       count++;
-      if (count === 2) {
-        done();
-      }
     });
 
     translate.activeLang = 'fr';
     translate.activeLang = 'it';
     translate.activeLang = 'it';
-  });
+
+    tick(100);
+
+    expect(count).toBe(2);
+  }));
 
   it('should provide previous and current value for changed event', done => {
     translate.activeLang = 'en';

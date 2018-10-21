@@ -40,7 +40,10 @@ describe('TitleService', () => {
   });
 
   it('should raise [changed] event upon setting new title', done => {
-    titleService.changed.subscribe(() => done());
+    titleService.changed.subscribe(args => {
+      expect(args.currentValue).toBe('APP.TITLE');
+      done();
+    });
     titleService.setTitle('APP.TITLE');
   });
 
