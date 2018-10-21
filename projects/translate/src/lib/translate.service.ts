@@ -16,7 +16,9 @@ export interface TranslateParams {
   [key: string]: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TranslateService {
   protected data: { [key: string]: any } = {};
   private _fallbackLang = 'en';
