@@ -3,7 +3,7 @@ sudo: false
 
 language: node_js
 node_js:
-  - "8"
+  - '8'
 
 before_install:
   - export DISPLAY=:99.0
@@ -14,11 +14,12 @@ install:
   - npm ci
 
 script:
-  - npm run test:ci
+  - npm run spellcheck
+  - npm test -- translate --watch=false
 
 addons:
   chrome: stable
 
 cache:
   directories:
-     - node_modules
+    - node_modules
