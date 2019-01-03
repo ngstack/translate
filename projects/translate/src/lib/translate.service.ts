@@ -240,7 +240,7 @@ export class TranslateService {
       lang !== this.activeLang &&
       (this.supportedLangs &&
         this.supportedLangs.length > 0 &&
-        !this.supportedLangs.includes(lang))
+        !(this.supportedLangs.indexOf(lang) >= 0))
     );
   }
 
