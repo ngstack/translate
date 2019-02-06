@@ -1,13 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { TranslateService, TRANSLATE_SETTINGS } from './translate.service';
 import { TranslatePipe } from './translate.pipe';
 import { TitleService } from './title.service';
 import { TranslateSettings } from './translate.settings';
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   declarations: [TranslatePipe],
   exports: [TranslatePipe]
 })
