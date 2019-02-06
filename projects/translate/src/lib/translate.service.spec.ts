@@ -350,6 +350,24 @@ describe('TranslateService', () => {
     expect(result).toEqual('You got 12 unread messages.');
   });
 
+  it('should translate multiple inputs', async () => {
+    const data = {
+      VALUE_1: 'Value {num1}.',
+      VALUE_2: 'Value {num2}.',
+      VALUE_3: 'Value {num1} again.'
+    };
+
+    await translate.use('en', data);
+
+    const inputs = ['VALUE_1', 'VALUE_2', 'VALUE_3'];
+    const context = {
+      num1: 1,
+      num2: 2
+    };
+    const result = translate.get(inputs, context, 'en');
+    expect(result).toEqual(['Value 1.', 'Value 2.', 'Value 1 again.']);
+  });
+
   it('should use original string when format params not provided', async () => {
     const data = {
       MESSAGE_FORMAT: 'Hello, {username}!'

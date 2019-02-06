@@ -167,13 +167,23 @@ export class TranslateService {
    * @returns Translated string
    * @memberof TranslateService
    */
-  get(key: string, params?: TranslateParams, lang?: string): string {
+  get<T extends string | string[] = string>(
+    key: T,
+    params?: TranslateParams,
+    lang?: string
+  ): T {
     if (key) {
-      let value = this.getValue(lang || this.activeLang, key);
-      if (value === key) {
-        value = this.getValue(this.fallbackLang, key);
+      if (Array.isArray(key)) {
+        return <T>key.map((value: string) => {
+          return this.get(value, params, lang);
+        });
+      } else {
+        let value = this.getValue(lang || this.activeLang, <string>key);
+        if (value === key) {
+          value = this.getValue(this.fallbackLang, <string>key);
+        }
+        return <T>this.format(value, params);
       }
-      return this.format(value, params);
     } else {
       return null;
     }
@@ -234,7 +244,7 @@ export class TranslateService {
     });
   }
 
-  protected isNotSupported(lang): boolean {
+  protected isNotSupported(lang: string): boolean {
     return (
       lang !== this.fallbackLang &&
       lang !== this.activeLang &&
@@ -280,7 +290,7 @@ export class TranslateService {
     return finalResult;
   }
 
-  protected merge(...translations): any {
+  protected merge(...translations: any[]): any {
     const result = {};
 
     translations.forEach(translation => {
