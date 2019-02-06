@@ -13,7 +13,7 @@ export const TRANSLATE_SETTINGS = new InjectionToken<TranslateSettings>(
 );
 
 export interface TranslateParams {
-  [key: string]: string;
+  [key: string]: string | number;
 }
 
 @Injectable({
@@ -22,7 +22,7 @@ export interface TranslateParams {
 export class TranslateService {
   protected data: { [key: string]: any } = {};
   private _fallbackLang = 'en';
-  private _activeLang;
+  private _activeLang: string;
   private _translationRoot = 'assets/i18n';
 
   /**
@@ -306,7 +306,7 @@ export class TranslateService {
         const value = params[key];
         const template = new RegExp('{' + key + '}', 'gm');
 
-        result = result.replace(template, value);
+        result = result.replace(template, value.toString());
       });
     }
 

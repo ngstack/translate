@@ -337,6 +337,19 @@ describe('TranslateService', () => {
     expect(result).toEqual('Hello, Denys!');
   });
 
+  it('should use numbers as format params', async () => {
+    const data = {
+      MESSAGE: 'You got {num} unread messages.'
+    };
+
+    await translate.use('en', data);
+    const result = translate.get('MESSAGE', {
+      num: 12
+    });
+
+    expect(result).toEqual('You got 12 unread messages.');
+  });
+
   it('should use original string when format params not provided', async () => {
     const data = {
       MESSAGE_FORMAT: 'Hello, {username}!'
