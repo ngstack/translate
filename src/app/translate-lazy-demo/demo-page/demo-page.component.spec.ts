@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DemoPageComponent } from './demo-page.component';
 import { TranslateModule } from '@ngstack/translate';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('DemoPageComponent', () => {
   let component: DemoPageComponent;
@@ -9,10 +10,9 @@ describe('DemoPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ TranslateModule.forRoot() ],
-      declarations: [ DemoPageComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, TranslateModule.forRoot()],
+      declarations: [DemoPageComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
