@@ -9,6 +9,8 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
+install: yarn
+
 script:
   - yarn spellcheck
   - yarn test translate --watch=false
