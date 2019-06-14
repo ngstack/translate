@@ -20,7 +20,8 @@
     "xpath",
     "tooltip",
     "tooltips",
-    "unindent"
+    "unindent",
+    "unpatched"
   ],
   "dictionaries": ["en-gb", "html"]
 }

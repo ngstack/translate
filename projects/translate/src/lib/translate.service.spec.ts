@@ -451,7 +451,7 @@ describe('TranslateService', () => {
 
     spyOn(http, 'get').and.callFake((url: string) => {
       requested = url;
-      return of({});
+      return of(<any>{});
     });
 
     await translate.use('en');
