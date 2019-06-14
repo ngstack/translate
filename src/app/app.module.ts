@@ -19,7 +19,7 @@ const routes: Route[] = [
   {
     path: 'translate-lazy',
     loadChildren:
-      'src/app/translate-lazy-demo/translate-lazy-demo.module#TranslateLazyDemoModule'
+      () => import('src/app/translate-lazy-demo/translate-lazy-demo.module').then(m => m.TranslateLazyDemoModule)
   }
 ];
 
