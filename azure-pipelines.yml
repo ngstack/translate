@@ -17,5 +17,5 @@ steps:
 
   - script: |
       yarn install
-      yarn test translate --watch=false
+      yarn test:ci
     displayName: 'install and test'

@@ -9,6 +9,7 @@
     "start": "ng build translate && ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:ci": "ng test translate --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "spellcheck": "cspell 'src/**/*.ts' 'e2e/**/*.ts' 'projects/**/*.ts'",
