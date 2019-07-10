@@ -8,7 +8,7 @@
     "ng": "ng",
     "start": "ng build translate && ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test translate",
     "test:ci": "ng test translate --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
