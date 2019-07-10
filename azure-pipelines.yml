@@ -17,5 +17,7 @@ steps:
 
   - script: |
       yarn install
+      yarn lint
+      yarn spellcheck
       yarn test:ci
-    displayName: 'install and test'
+    displayName: 'install, lint and test'

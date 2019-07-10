@@ -13,7 +13,8 @@ install: yarn
 
 script:
   - yarn spellcheck
-  - yarn test translate --watch=false
+  - yarn lint
+  - yarn test:ci
 
 addons:
   chrome: stable
