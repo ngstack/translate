@@ -31,5 +31,5 @@ steps:
 
   - task: PublishPipelineArtifact@0
     inputs:
-      artifactName: 'angular'
+      artifactName: 'translate-dist'
       targetPath: './dist/@ngstack/translate'
