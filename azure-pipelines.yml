@@ -21,3 +21,15 @@ steps:
       yarn spellcheck
       yarn test:ci
     displayName: 'install, lint and test'
+
+  - task: Npm@1
+    displayName: 'Build Angular'
+    inputs:
+      command: custom
+      customCommand: run build:prod
+      workingDir: .
+
+  - task: PublishPipelineArtifact@0
+    inputs:
+      artifactName: 'translate-dist'
+      targetPath: './dist/@ngstack/translate'
