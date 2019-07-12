@@ -1,4 +1,4 @@
-# @ngstack/translate
+# translate
 
 Translation library for Angular applications.
 
