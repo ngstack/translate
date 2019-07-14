@@ -42,6 +42,12 @@ steps:
       customCommand: 'run spellcheck'
 
   - task: Npm@1
+    displayName: 'Prettier'
+    inputs:
+      command: 'custom'
+      customCommand: 'run format:check'
+
+  - task: Npm@1
     displayName: 'Unit Tests'
     inputs:
       command: 'custom'
