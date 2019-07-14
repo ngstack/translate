@@ -14,7 +14,9 @@
     "e2e": "ng e2e",
     "spellcheck": "cspell 'src/**/*.ts' 'e2e/**/*.ts' 'projects/**/*.ts'",
     "build:lib": "ng build translate",
-    "build:prod": "ng build translate --prod"
+    "build:prod": "ng build translate --prod",
+    "format:check": "prettier --check \"{src,projects}/**/*.{ts,js,css,scss,html}\"",
+    "format:fix": "prettier --write \"src/{src,projects}/**/*.{ts,js,css,scss,html}\""
   },
   "private": true,
   "dependencies": {
@@ -53,6 +55,7 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "karma-junit-reporter": "^1.2.0",
     "ng-packagr": "^5.3.0",
+    "prettier": "^1.18.2",
     "protractor": "~5.4.2",
     "puppeteer": "^1.18.1",
     "ts-node": "~8.3.0",
