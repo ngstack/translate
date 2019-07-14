@@ -22,6 +22,15 @@ steps:
       yarn test:ci
     displayName: 'install, lint and test'
 
+  - task: PublishCodeCoverageResults@1
+    displayName: 'Publish code coverage results'
+    condition: succeededOrFailed()
+    inputs:
+      codeCoverageTool: Cobertura
+      summaryFileLocation: 'coverage/cobertura-coverage.xml'
+      reportDirectory: coverage
+      failIfCoverageEmpty: true
+
   - task: Npm@1
     displayName: 'Build Angular'
     inputs:
