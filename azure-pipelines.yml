@@ -24,12 +24,28 @@ steps:
       versionSpec: '10.x'
     displayName: 'Install Node.js'
 
-  - script: |
-      yarn install
-      yarn lint
-      yarn spellcheck
-      yarn test:ci
-    displayName: 'install, lint and test'
+  - task: Npm@1
+    displayName: 'Install dependencies'
+    inputs:
+      command: 'install'
+
+  - task: Npm@1
+    displayName: 'Lint'
+    inputs:
+      command: 'custom'
+      customCommand: 'run lint --  --format=stylish'
+
+  - task: Npm@1
+    displayName: 'Spellcheck'
+    inputs:
+      command: 'custom'
+      customCommand: 'spellcheck'
+
+  - task: Npm@1
+    displayName: 'Unit Tests'
+    inputs:
+      command: 'custom'
+      customCommand: 'test:ci'
 
   - task: PublishCodeCoverageResults@1
     displayName: 'Publish code coverage results'
@@ -54,7 +70,6 @@ steps:
     inputs:
       command: custom
       customCommand: run build:prod
-      workingDir: .
 
   - task: PublishPipelineArtifact@0
     inputs:
