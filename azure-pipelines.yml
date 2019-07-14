@@ -39,13 +39,13 @@ steps:
     displayName: 'Spellcheck'
     inputs:
       command: 'custom'
-      customCommand: 'spellcheck'
+      customCommand: 'run spellcheck'
 
   - task: Npm@1
     displayName: 'Unit Tests'
     inputs:
       command: 'custom'
-      customCommand: 'test:ci'
+      customCommand: 'run test:ci'
 
   - task: PublishCodeCoverageResults@1
     displayName: 'Publish code coverage results'
