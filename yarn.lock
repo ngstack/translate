@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.802.1":
-  version "0.802.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.802.1.tgz#7ccb714ff9d064ccf5194057200cee3dbc6932c6"
-  integrity sha512-gTQ1mrGkt8eloqQOhivTz94e1ccQlncydVbnFrCxVaMn3wCr8V2GEeahwJQCm3Xl2Qv77R9QVzadXHt1J0ps8A==
-  dependencies:
-    "@angular-devkit/core" "8.2.1"
-    rxjs "6.4.0"
-
 "@angular-devkit/architect@0.802.2":
   version "0.802.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.802.2.tgz#f2305052e731b68d0fcb98958426f62ce97b441e"
@@ -72,12 +64,12 @@
     webpack-subresource-integrity "1.1.0-rc.6"
     worker-plugin "3.1.0"
 
-"@angular-devkit/build-ng-packagr@^0.802.1":
-  version "0.802.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.802.1.tgz#ec2a71c3fb7251458a7918351b0b5d4daeccef0d"
-  integrity sha512-zUiU42PsF+jysB3cgWvnB7mxhTENoRIPvkkBeL+dkixCqdcd+FXmM7jrgHrX+uVvR0/HtsSkS9K0V3nDfGBrEA==
+"@angular-devkit/build-ng-packagr@^0.802.2":
+  version "0.802.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.802.2.tgz#8b83936667a955b91cc865f936b27428065000cc"
+  integrity sha512-6lY95tiW+KooPMWB3P4r54TUe5pSZgkv/6mphrUcxqwvN/jKOV4MkpoFxJsu7zNuiFPHU8K5URCWFsQPbiObPg==
   dependencies:
-    "@angular-devkit/architect" "0.802.1"
+    "@angular-devkit/architect" "0.802.2"
     rxjs "6.4.0"
 
 "@angular-devkit/build-optimizer@0.802.2":
@@ -100,17 +92,6 @@
     "@angular-devkit/core" "8.2.2"
     rxjs "6.4.0"
     webpack-merge "4.2.1"
-
-"@angular-devkit/core@8.2.1":
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.2.1.tgz#f389365e57e93ede2452eaf97aa48999afffe0ef"
-  integrity sha512-d/PNSZYtJ10tY/TILe3TiB9wLjuxMja/oR0PhdrfuadTF/blZ6Qjg8aVzImkwnvsm+0TgDkIXwcMKnoNa2LDxQ==
-  dependencies:
-    ajv "6.10.2"
-    fast-json-stable-stringify "2.0.0"
-    magic-string "0.25.3"
-    rxjs "6.4.0"
-    source-map "0.7.3"
 
 "@angular-devkit/core@8.2.2":
   version "8.2.2"
