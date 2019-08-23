@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.802.2":
-  version "0.802.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.802.2.tgz#f2305052e731b68d0fcb98958426f62ce97b441e"
-  integrity sha512-bMMo8BejHi3+n4xqewgcfat5+OYDmQQCLxWQ2W+qr7/u08vmTQTix3Q/wClp0nxgN0Zc9/1gSPaeudHLAlEizg==
-  dependencies:
-    "@angular-devkit/core" "8.2.2"
-    rxjs "6.4.0"
-
 "@angular-devkit/architect@0.803.0":
   version "0.803.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.803.0.tgz#4189a992dc3a9ee0979df59efe6a263c282907da"
@@ -79,12 +71,12 @@
     worker-farm "1.7.0"
     worker-plugin "3.1.0"
 
-"@angular-devkit/build-ng-packagr@^0.802.2":
-  version "0.802.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.802.2.tgz#8b83936667a955b91cc865f936b27428065000cc"
-  integrity sha512-6lY95tiW+KooPMWB3P4r54TUe5pSZgkv/6mphrUcxqwvN/jKOV4MkpoFxJsu7zNuiFPHU8K5URCWFsQPbiObPg==
+"@angular-devkit/build-ng-packagr@^0.803.0":
+  version "0.803.0"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.803.0.tgz#62ae3c5079190d924fa9e0196d7319df8a91c07c"
+  integrity sha512-SYizn7qN2i9C9KjqUtbi59mGPsuVcFCszNtEQ15lmdO+s85i2GW6DDXoA2aXdqzHheAH5GPw3yHANAWqF8dS1g==
   dependencies:
-    "@angular-devkit/architect" "0.802.2"
+    "@angular-devkit/architect" "0.803.0"
     rxjs "6.4.0"
 
 "@angular-devkit/build-optimizer@0.803.0":
@@ -107,17 +99,6 @@
     "@angular-devkit/core" "8.3.0"
     rxjs "6.4.0"
     webpack-merge "4.2.1"
-
-"@angular-devkit/core@8.2.2":
-  version "8.2.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.2.2.tgz#f7239b6fca785c5a85fbe7684f807b8fa41311d4"
-  integrity sha512-qA1lK/OQhNptCxoEGbTryn6yeFS1F/e/EiUTwgU/j4DkBwPyYGE8iqWBd/cgI9AVqQaRSLLhVWXtDPxoNL0TKg==
-  dependencies:
-    ajv "6.10.2"
-    fast-json-stable-stringify "2.0.0"
-    magic-string "0.25.3"
-    rxjs "6.4.0"
-    source-map "0.7.3"
 
 "@angular-devkit/core@8.3.0":
   version "8.3.0"
