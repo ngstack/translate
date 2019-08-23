@@ -13,3 +13,21 @@
 </p>
 
 <p>Custom Pipe: {{ 'TITLE' | myTranslate }}</p>
+
+<p>
+  Attribute directive:
+  <span [translate]="'TITLE'"></span>
+</p>
+
+<p>
+  Attribute directive (plain):
+  <span translate="TITLE"></span>
+</p>
+
+<p>
+  Attribute directive with params:
+  <span
+    [translate]="'FORMATTED.HELLO_MESSAGE'"
+    [translateParams]="{ username: 'world' }"
+  ></span>
+</p>
