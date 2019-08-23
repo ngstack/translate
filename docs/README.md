@@ -2,15 +2,7 @@
 
 Translation library for Angular applications.
 
-## Live demos
-
-- Angular 6
-
-  - [Angular example (live)](https://stackblitz.com/edit/ngstack-translate-angular6)
-
-- Angular 5
-  - [Angular example (live)](https://stackblitz.com/edit/ngstack-translate-angular)
-  - [Ionic example (live)](https://stackblitz.com/edit/ngstack-translate-ionic)
+[Live Demo](https://stackblitz.com/edit/ngstack-translate)
 
 ## Installing
 
