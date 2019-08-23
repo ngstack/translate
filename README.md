@@ -370,3 +370,10 @@ use `TranslateModule.forRoot()` in the main application,
 and `TranslateModule.forChild()` in all lazy-loaded feature modules.
 
 For more details please refer to [Lazy Loading Feature Modules](https://angular.io/guide/lazy-loading-ngmodules)
+
+## See also
+
+List of alternative libraries you can check out:
+
+- [ngneat/transloco](https://github.com/ngneat/transloco)
+- [ngx-translate/core](https://github.com/ngx-translate/core)
