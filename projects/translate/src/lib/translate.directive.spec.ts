@@ -23,7 +23,6 @@ class TestComponent {
 
 describe('TranslateDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
-  // let elements: DebugElement[];
   let translate: TranslateService;
 
   beforeEach(() => {
