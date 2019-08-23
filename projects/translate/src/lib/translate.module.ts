@@ -4,11 +4,12 @@ import { TranslateService, TRANSLATE_SETTINGS } from './translate.service';
 import { TranslatePipe } from './translate.pipe';
 import { TitleService } from './title.service';
 import { TranslateSettings } from './translate.settings';
+import { TranslateDirective } from './translate.directive';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [TranslatePipe],
-  exports: [TranslatePipe]
+  declarations: [TranslatePipe, TranslateDirective],
+  exports: [TranslatePipe, TranslateDirective]
 })
 export class TranslateModule {
   static forRoot(settings?: TranslateSettings): ModuleWithProviders {

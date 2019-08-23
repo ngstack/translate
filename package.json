@@ -8,7 +8,7 @@
     "ng": "ng",
     "start": "ng build translate && ng serve",
     "build": "ng build",
-    "test": "ng test translate",
+    "test": "ng test translate --code-coverage",
     "test:ci": "ng test translate --watch=false --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",

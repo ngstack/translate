@@ -78,6 +78,9 @@ In the main application template, use the following snippet:
 - `<element [innerHTML]="'KEY' | translate"></element>`
 - `<element>{{ 'PROPERTY.PATH' | translate }}</element>`
 - `<element>{{ 'FORMAT' | translate:params }}</element>`
+- (2.3.0) `<element [translate]="'KEY'"></element>`
+- (2.3.0) `<element [translate]="'FORMAT'" [translateParams]="{ msg: hello }"></element>`
+- (2.3.0) `<element translate="KEY"></element>`
 
 ### Title Service
 
