@@ -77,6 +77,12 @@ steps:
       command: custom
       customCommand: run build:prod
 
+  - task: Npm@1
+    displayName: 'Check bundle size'
+    inputs:
+      command: 'custom'
+      customCommand: 'run size'
+
   - task: PublishPipelineArtifact@0
     inputs:
       artifactName: 'translate-dist'

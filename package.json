@@ -16,7 +16,8 @@
     "build:lib": "ng build translate",
     "build:prod": "ng build translate --prod && cp -r README.md dist/@ngstack/translate",
     "format:check": "prettier --check \"{src,projects}/**/*.{ts,js,css,scss,html}\"",
-    "format:fix": "prettier --write \"src/{src,projects}/**/*.{ts,js,css,scss,html}\""
+    "format:fix": "prettier --write \"src/{src,projects}/**/*.{ts,js,css,scss,html}\"",
+    "size": "size-limit"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +41,7 @@
     "@angular/cli": "^8.3.0",
     "@angular/compiler-cli": "^8.2.2",
     "@angular/language-service": "^8.2.3",
+    "@size-limit/preset-small-lib": "^2.1.1",
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.6",
     "@types/node": "~12.7.2",
@@ -57,10 +59,18 @@
     "prettier": "^1.18.2",
     "protractor": "~5.4.2",
     "puppeteer": "^1.19.0",
+    "size-limit": "^2.1.1",
     "ts-node": "~8.3.0",
     "tsickle": "^0.36.0",
     "tslib": "^1.10.0",
     "tslint": "~5.19.0",
     "typescript": "3.5.3"
-  }
+  },
+  "size-limit": [
+    {
+      "path": "dist/@ngstack/translate/bundles/ngstack-translate.umd.min.js",
+      "limit": "5 KB",
+      "webpack": false
+    }
+  ]
 }
