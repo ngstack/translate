@@ -29,7 +29,7 @@ Translation library for Angular applications.
   - [Define active language](#define-active-language)
   - [Restricting supported languages](#restricting-supported-languages)
   - [Using with your own pipes](#using-with-your-own-pipes)
-- [Lazy Loading](#lazy-loading)
+  - [Lazy Loading](#lazy-loading)
 - [See also](#see-also)
 
 <!-- /TOC -->
@@ -394,7 +394,7 @@ Then in the HTML templates you can use your pipe like following:
 </p>
 ```
 
-## Lazy Loading
+### Lazy Loading
 
 To enable Lazy Loading
 use `TranslateModule.forRoot()` in the main application,
