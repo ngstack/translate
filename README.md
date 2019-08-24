@@ -6,6 +6,34 @@ Translation library for Angular applications.
 
 [Live Demo](https://stackblitz.com/edit/ngstack-translate)
 
+# Table of Contents
+
+<!-- TOC depthfrom:2 -->
+
+- [Installing](#installing)
+- [Using with the application](#using-with-the-application)
+- [Features](#features)
+  - [Translate Pipe](#translate-pipe)
+  - [Title Service](#title-service)
+    - [Translating application title](#translating-application-title)
+  - [Translate Service](#translate-service)
+    - [Using from code](#using-from-code)
+    - [Custom language without external files](#custom-language-without-external-files)
+  - [Formatted translations](#formatted-translations)
+- [Advanced topics](#advanced-topics)
+  - [Testing components](#testing-components)
+  - [Watching for language change](#watching-for-language-change)
+  - [Custom translation path](#custom-translation-path)
+  - [Loading from multiple locations](#loading-from-multiple-locations)
+  - [Cache busting](#cache-busting)
+  - [Define active language](#define-active-language)
+  - [Restricting supported languages](#restricting-supported-languages)
+  - [Using with your own pipes](#using-with-your-own-pipes)
+- [Lazy Loading](#lazy-loading)
+- [See also](#see-also)
+
+<!-- /TOC -->
+
 ## Installing
 
 ```sh
