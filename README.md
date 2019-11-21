@@ -6,6 +6,10 @@ Lightweight (±3KB) translation library for Angular applications.
 
 [Live Demo](https://stackblitz.com/edit/ngstack-translate)
 
+<a href="https://www.buymeacoffee.com/denys" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="51" width="217">
+</a>
+
 # Table of Contents
 
 <!-- TOC depthfrom:2 -->
