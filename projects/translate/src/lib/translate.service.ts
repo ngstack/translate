@@ -233,6 +233,7 @@ export class TranslateService {
         path += `?v=${Date.now()}`;
       }
 
+      // tslint:disable-next-line: deprecation
       this.http.get<{}>(path).subscribe(
         json => {
           resolve(this.setTranslation(lang, json));
@@ -248,9 +249,9 @@ export class TranslateService {
     return (
       lang !== this.fallbackLang &&
       lang !== this.activeLang &&
-      (this.supportedLangs &&
-        this.supportedLangs.length > 0 &&
-        !(this.supportedLangs.indexOf(lang) >= 0))
+      this.supportedLangs &&
+      this.supportedLangs.length > 0 &&
+      !(this.supportedLangs.indexOf(lang) >= 0)
     );
   }
 
