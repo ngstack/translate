@@ -80,12 +80,12 @@
     webpack-subresource-integrity "1.1.0-rc.6"
     worker-plugin "3.2.0"
 
-"@angular-devkit/build-ng-packagr@^0.803.18":
-  version "0.803.18"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.803.18.tgz#86056a69b69ad02b8628404e05cca3304e457430"
-  integrity sha512-ky9+ugqZbtdg7LEPFUmljlrquWKjZpGmGck5sZJ+Xk28HM430kmMPQllwd8ZUHzP1gYnGvSkyEf7Gf/pp6rcuA==
+"@angular-devkit/build-ng-packagr@^0.803.19":
+  version "0.803.19"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.803.19.tgz#62bd30d82691378782edd5404350dc557862020e"
+  integrity sha512-8P7jq/ZvyKM9B5A9Ovt6P3fgo33DvoDIjsJmoXW7kgAbzz1NqRgsP9fwasSmgYo8G1CcqJDeGPHSkdsPRypRmg==
   dependencies:
-    "@angular-devkit/architect" "0.803.18"
+    "@angular-devkit/architect" "0.803.19"
     rxjs "6.4.0"
 
 "@angular-devkit/build-optimizer@0.803.18":
