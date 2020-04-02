@@ -12,7 +12,7 @@ import { TranslateDirective } from './translate.directive';
   exports: [TranslatePipe, TranslateDirective]
 })
 export class TranslateModule {
-  static forRoot(settings?: TranslateSettings): ModuleWithProviders {
+  static forRoot(settings?: TranslateSettings): ModuleWithProviders<TranslateModule> {
     return {
       ngModule: TranslateModule,
       providers: [
@@ -23,7 +23,7 @@ export class TranslateModule {
     };
   }
 
-  static forChild(): ModuleWithProviders {
+  static forChild(): ModuleWithProviders<TranslateModule> {
     return {
       ngModule: TranslateModule
     };
