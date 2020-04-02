@@ -24,7 +24,7 @@
     "url": "https://github.com/ngstack/translate/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^8.0.1",
-    "@angular/core": "^8.0.1"
+    "@angular/common": ">=9.1.0",
+    "@angular/core": ">=9.1.0"
   }
 }
