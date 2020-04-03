@@ -32,7 +32,7 @@ describe('TranslateDirective', () => {
       providers: [TranslateService]
     });
 
-    translate = TestBed.get(TranslateService);
+    translate = TestBed.inject(TranslateService);
 
     translate.use('en', {
       message1: 'hello, world',

@@ -3,7 +3,6 @@
   "dest": "../../dist/@ngstack/translate",
   "deleteDestPath": false,
   "lib": {
-    "languageLevel": ["dom", "es2017"],
     "entryFile": "src/public_api.ts"
   }
 }

@@ -16,13 +16,13 @@ describe('TitleService', () => {
       providers: [TitleService, TranslateService, Title]
     });
 
-    translateService = TestBed.get(TranslateService);
+    translateService = TestBed.inject(TranslateService);
     translateService.use('en', { APP: { TITLE: '[en] title' } });
     translateService.use('it', { APP: { TITLE: '[it] title' } });
     translateService.activeLang = 'en';
 
-    titleService = TestBed.get(TitleService);
-    title = TestBed.get(Title);
+    titleService = TestBed.inject(TitleService);
+    title = TestBed.inject(Title);
   });
 
   it('should set application title for active locale', () => {

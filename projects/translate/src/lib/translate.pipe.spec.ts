@@ -13,7 +13,7 @@ describe('TranslatePipe', () => {
       providers: [TranslateService]
     });
 
-    translate = TestBed.get(TranslateService);
+    translate = TestBed.inject(TranslateService);
     pipe = new TranslatePipe(translate);
   });
 
