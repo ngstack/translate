@@ -12,7 +12,9 @@ import { TranslateDirective } from './translate.directive';
   exports: [TranslatePipe, TranslateDirective]
 })
 export class TranslateModule {
-  static forRoot(settings?: TranslateSettings): ModuleWithProviders<TranslateModule> {
+  static forRoot(
+    settings?: TranslateSettings
+  ): ModuleWithProviders<TranslateModule> {
     return {
       ngModule: TranslateModule,
       providers: [
