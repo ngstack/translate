@@ -44,7 +44,7 @@
     "@size-limit/preset-small-lib": "^4.4.2",
     "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.8",
-    "@types/node": "^12.11.1",
+    "@types/node": "^13.11.0",
     "codelyzer": "^5.1.2",
     "cspell": "^4.0.55",
     "jasmine-core": "~3.5.0",
