@@ -1,7 +1,7 @@
 {
   "name": "@ngstack/translate",
   "description": "Translation library for Angular and Ionic applications.",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "author": "Denys Vuika <denys.vuika@gmail.com>",
   "keywords": [
