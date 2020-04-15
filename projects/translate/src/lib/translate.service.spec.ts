@@ -11,7 +11,7 @@ describe('TranslateService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers: [TranslateService]
+      providers: [TranslateService],
     });
 
     translate = TestBed.inject(TranslateService);
@@ -195,7 +195,7 @@ describe('TranslateService', () => {
     expect(result).toEqual({
       key1: 'value1',
       key2: 'value2',
-      key3: 'value3'
+      key3: 'value3',
     });
   });
 
@@ -211,13 +211,13 @@ describe('TranslateService', () => {
     expect(result).toEqual({
       key1: 'value1',
       key2: {
-        child1_key: 'child1_value'
+        child1_key: 'child1_value',
       },
       key3: {
         child2: {
-          sub1: 'sub2'
-        }
-      }
+          sub1: 'sub2',
+        },
+      },
     });
   });
 
@@ -229,7 +229,7 @@ describe('TranslateService', () => {
     const result = await translate.use('en', version2);
 
     expect(result).toEqual({
-      key1: ['one', 'two', 'three', 'four']
+      key1: ['one', 'two', 'three', 'four'],
     });
   });
 
@@ -243,8 +243,8 @@ describe('TranslateService', () => {
     expect(result).toEqual({
       key1: {
         value1: 'one',
-        value2: 'two'
-      }
+        value2: 'two',
+      },
     });
   });
 
@@ -256,7 +256,7 @@ describe('TranslateService', () => {
     const result = await translate.use('en', version2);
 
     expect(result).toEqual({
-      key1: 'value2'
+      key1: 'value2',
     });
   });
 
@@ -264,9 +264,9 @@ describe('TranslateService', () => {
     const data = {
       MAIN: {
         APPLICATION: {
-          TITLE: 'Hello there!'
-        }
-      }
+          TITLE: 'Hello there!',
+        },
+      },
     };
 
     await translate.use('en', data);
@@ -278,8 +278,8 @@ describe('TranslateService', () => {
   it('should return key when sub-property missing', async () => {
     const data = {
       MAIN: {
-        APPLICATION: {}
-      }
+        APPLICATION: {},
+      },
     };
 
     await translate.use('en', data);
@@ -305,7 +305,7 @@ describe('TranslateService', () => {
 
   it('should translate when key is a property path', async () => {
     const data = {
-      'MAIN.APPLICATION.TITLE': 'Hello there!'
+      'MAIN.APPLICATION.TITLE': 'Hello there!',
     };
 
     await translate.use('en', data);
@@ -314,7 +314,7 @@ describe('TranslateService', () => {
 
   it('should use translate using format params', async () => {
     const data = {
-      MESSAGE_FORMAT: 'Hello, {username}!'
+      MESSAGE_FORMAT: 'Hello, {username}!',
     };
 
     await translate.use('en', data);
@@ -325,13 +325,13 @@ describe('TranslateService', () => {
 
   it('should use multiple format params', async () => {
     const data = {
-      MESSAGE_FORMAT: '{message}, {username}!'
+      MESSAGE_FORMAT: '{message}, {username}!',
     };
 
     await translate.use('en', data);
     const result = translate.get('MESSAGE_FORMAT', {
       message: 'Hello',
-      username: 'Denys'
+      username: 'Denys',
     });
 
     expect(result).toEqual('Hello, Denys!');
@@ -339,12 +339,12 @@ describe('TranslateService', () => {
 
   it('should use numbers as format params', async () => {
     const data = {
-      MESSAGE: 'You got {num} unread messages.'
+      MESSAGE: 'You got {num} unread messages.',
     };
 
     await translate.use('en', data);
     const result = translate.get('MESSAGE', {
-      num: 12
+      num: 12,
     });
 
     expect(result).toEqual('You got 12 unread messages.');
@@ -354,7 +354,7 @@ describe('TranslateService', () => {
     const data = {
       VALUE_1: 'Value {num1}.',
       VALUE_2: 'Value {num2}.',
-      VALUE_3: 'Value {num1} again.'
+      VALUE_3: 'Value {num1} again.',
     };
 
     await translate.use('en', data);
@@ -362,7 +362,7 @@ describe('TranslateService', () => {
     const inputs = ['VALUE_1', 'VALUE_2', 'VALUE_3'];
     const context = {
       num1: 1,
-      num2: 2
+      num2: 2,
     };
     const result = translate.get(inputs, context, 'en');
     expect(result).toEqual(['Value 1.', 'Value 2.', 'Value 1 again.']);
@@ -370,7 +370,7 @@ describe('TranslateService', () => {
 
   it('should use original string when format params not provided', async () => {
     const data = {
-      MESSAGE_FORMAT: 'Hello, {username}!'
+      MESSAGE_FORMAT: 'Hello, {username}!',
     };
 
     await translate.use('en', data);
@@ -381,7 +381,7 @@ describe('TranslateService', () => {
 
   it('should use original string when format params are empty', async () => {
     const data = {
-      MESSAGE_FORMAT: 'Hello, {username}!'
+      MESSAGE_FORMAT: 'Hello, {username}!',
     };
 
     await translate.use('en', data);
@@ -586,11 +586,11 @@ describe('TranslateService', () => {
 
     expect(result).toEqual({
       key1: 'value1',
-      key2: 'value2'
+      key2: 'value2',
     });
 
     expect(httpMock.calls.argsFor(0)).toEqual([
-      `${translate.translationRoot}/en.json`
+      `${translate.translationRoot}/en.json`,
     ]);
 
     expect(httpMock.calls.argsFor(1)).toEqual([`custom/path/en.json`]);
@@ -626,7 +626,9 @@ describe('TranslateService', () => {
     expect(raised).toBeTruthy();
   }));
 
-  it('should raise an event only when language value is changed', fakeAsync(done => {
+  it('should raise an event only when language value is changed', fakeAsync((
+    done
+  ) => {
     translate.use('en', { key: 'value ' });
     translate.use('fr', { key: 'value ' });
     translate.use('it', { key: 'value ' });
@@ -647,7 +649,7 @@ describe('TranslateService', () => {
     expect(count).toBe(2);
   }));
 
-  it('should provide previous and current value for changed event', done => {
+  it('should provide previous and current value for changed event', (done) => {
     translate.activeLang = 'en';
 
     translate.activeLangChanged.subscribe(

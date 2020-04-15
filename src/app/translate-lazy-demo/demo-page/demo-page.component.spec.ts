@@ -11,7 +11,7 @@ describe('DemoPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, TranslateModule.forRoot()],
-      declarations: [DemoPageComponent]
+      declarations: [DemoPageComponent],
     }).compileComponents();
   }));
 
