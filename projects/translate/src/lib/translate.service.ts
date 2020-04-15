@@ -3,7 +3,7 @@ import {
   EventEmitter,
   Inject,
   InjectionToken,
-  Optional
+  Optional,
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateSettings } from './translate.settings';
@@ -17,7 +17,7 @@ export interface TranslateParams {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TranslateService {
   protected data: { [key: string]: any } = {};
@@ -95,7 +95,7 @@ export class TranslateService {
       this.use(newValue).then(() => {
         this.activeLangChanged.next({
           previousValue: previousValue,
-          currentValue: newValue
+          currentValue: newValue,
         });
       });
     }
@@ -137,7 +137,7 @@ export class TranslateService {
       supportedLangs,
       translatePaths,
       translationRoot,
-      activeLang
+      activeLang,
     } = this;
 
     const defaults = {
@@ -147,7 +147,7 @@ export class TranslateService {
       translatePaths,
       translationRoot,
       activeLang,
-      ...settings
+      ...settings,
     };
 
     this.debugMode = defaults.debugMode;
@@ -228,14 +228,14 @@ export class TranslateService {
   }
 
   protected loadTranslation(lang: string, path: string): Promise<any> {
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       if (this.disableCache) {
         path += `?v=${Date.now()}`;
       }
 
       // tslint:disable-next-line: deprecation
       this.http.get<{}>(path).subscribe(
-        json => {
+        (json) => {
           resolve(this.setTranslation(lang, json));
         },
         () => {
@@ -294,8 +294,8 @@ export class TranslateService {
   protected merge(...translations: any[]): any {
     const result = {};
 
-    translations.forEach(translation => {
-      Object.keys(translation).forEach(key => {
+    translations.forEach((translation) => {
+      Object.keys(translation).forEach((key) => {
         if (key in result && Array.isArray(result[key])) {
           result[key] = result[key].concat(translation[key]);
         } else if (key in result && typeof result[key] === 'object') {
@@ -313,7 +313,7 @@ export class TranslateService {
     let result = str;
 
     if (params) {
-      Object.keys(params).forEach(key => {
+      Object.keys(params).forEach((key) => {
         const value = params[key];
         const template = new RegExp('{' + key + '}', 'gm');
 

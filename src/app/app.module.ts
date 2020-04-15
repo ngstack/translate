@@ -14,15 +14,15 @@ import { CustomTranslatePipe } from './translate-demo/custom-translate.pipe';
 const routes: Route[] = [
   {
     path: 'translate',
-    component: TranslateDemoComponent
+    component: TranslateDemoComponent,
   },
   {
     path: 'translate-lazy',
     loadChildren: () =>
       import('src/app/translate-lazy-demo/translate-lazy-demo.module').then(
-        m => m.TranslateLazyDemoModule
-      )
-  }
+        (m) => m.TranslateLazyDemoModule
+      ),
+  },
 ];
 
 export function setupTranslateService(service: TranslateService) {
@@ -37,7 +37,7 @@ export function setupTranslateService(service: TranslateService) {
     HttpClientModule,
     TranslateModule.forRoot(),
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   declarations: [AppComponent, TranslateDemoComponent, CustomTranslatePipe],
   providers: [
@@ -45,9 +45,9 @@ export function setupTranslateService(service: TranslateService) {
       provide: APP_INITIALIZER,
       useFactory: setupTranslateService,
       deps: [TranslateService],
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

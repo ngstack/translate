@@ -12,7 +12,7 @@ describe('TranslateDemoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, TranslateModule.forRoot()],
-      declarations: [CustomTranslatePipe, TranslateDemoComponent]
+      declarations: [CustomTranslatePipe, TranslateDemoComponent],
     }).compileComponents();
   }));
 

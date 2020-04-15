@@ -8,10 +8,10 @@ import { TranslateModule } from '@ngstack/translate';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      { path: '', pathMatch: 'full', component: DemoPageComponent }
+      { path: '', pathMatch: 'full', component: DemoPageComponent },
     ]),
-    TranslateModule
+    TranslateModule,
   ],
-  declarations: [DemoPageComponent]
+  declarations: [DemoPageComponent],
 })
 export class TranslateLazyDemoModule {}

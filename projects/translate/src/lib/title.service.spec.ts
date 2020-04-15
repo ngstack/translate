@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { TitleService } from './title.service';
 import { Title } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ describe('TitleService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers: [TitleService, TranslateService, Title]
+      providers: [TitleService, TranslateService, Title],
     });
 
     translateService = TestBed.inject(TranslateService);
@@ -39,8 +39,8 @@ describe('TitleService', () => {
     expect(title.getTitle()).toEqual('My custom title');
   });
 
-  it('should raise [changed] event upon setting new title', done => {
-    titleService.changed.subscribe(args => {
+  it('should raise [changed] event upon setting new title', (done) => {
+    titleService.changed.subscribe((args) => {
       expect(args.currentValue).toBe('APP.TITLE');
       done();
     });
@@ -56,10 +56,10 @@ describe('TitleService', () => {
     expect(titleService.changed.next).not.toHaveBeenCalled();
   });
 
-  it('should provide old and new values for [changed] event', done => {
+  it('should provide old and new values for [changed] event', (done) => {
     titleService.setTitle('APP.TITLE');
 
-    titleService.changed.subscribe(event => {
+    titleService.changed.subscribe((event) => {
       expect(event.previousValue).toBe('APP.TITLE');
       expect(event.currentValue).toBe('NEW.APP.TITLE');
       done();
@@ -68,7 +68,7 @@ describe('TitleService', () => {
     titleService.setTitle('NEW.APP.TITLE');
   });
 
-  it('should auto-update title on language change', done => {
+  it('should auto-update title on language change', (done) => {
     titleService.setTitle('APP.TITLE');
     expect(title.getTitle()).toEqual('[en] title');
 
@@ -87,7 +87,7 @@ describe('TitleService', () => {
     expect(title.getTitle()).toEqual('');
   });
 
-  it('should not update title on language change if not configured', done => {
+  it('should not update title on language change if not configured', (done) => {
     spyOn(title, 'setTitle').and.callThrough();
 
     translateService.activeLangChanged.subscribe(() => {

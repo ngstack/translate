@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
       [translateParams]="{ name: 'Bob' }"
     ></div>
     <div id="case4" [translate]></div>
-  `
+  `,
 })
 class TestComponent {
   message = 'message1';
@@ -29,7 +29,7 @@ describe('TranslateDirective', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
       declarations: [TestComponent, TranslateDirective],
-      providers: [TranslateService]
+      providers: [TranslateService],
     });
 
     translate = TestBed.inject(TranslateService);
@@ -37,13 +37,13 @@ describe('TranslateDirective', () => {
     translate.use('en', {
       message1: 'hello, world',
       key1: 'hello, there',
-      formatted: 'hello, {name}'
+      formatted: 'hello, {name}',
     });
 
     translate.use('ua', {
       message1: '[ua] hello, world',
       key1: '[ua] hello, there',
-      formatted: '[ua] hello, {name}'
+      formatted: '[ua] hello, {name}',
     });
 
     fixture = TestBed.createComponent(TestComponent);
@@ -78,7 +78,7 @@ describe('TranslateDirective', () => {
     expect(element.nativeElement.innerText).toBe('hello, Bob');
   });
 
-  it('should update element on language change', done => {
+  it('should update element on language change', (done) => {
     const element = fixture.debugElement.query(By.css('#case1'));
 
     expect(element).toBeDefined();

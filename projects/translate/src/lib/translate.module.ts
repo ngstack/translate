@@ -9,7 +9,7 @@ import { TranslateDirective } from './translate.directive';
 @NgModule({
   imports: [CommonModule],
   declarations: [TranslatePipe, TranslateDirective],
-  exports: [TranslatePipe, TranslateDirective]
+  exports: [TranslatePipe, TranslateDirective],
 })
 export class TranslateModule {
   static forRoot(
@@ -20,14 +20,14 @@ export class TranslateModule {
       providers: [
         { provide: TRANSLATE_SETTINGS, useValue: settings },
         TranslateService,
-        TitleService
-      ]
+        TitleService,
+      ],
     };
   }
 
   static forChild(): ModuleWithProviders<TranslateModule> {
     return {
-      ngModule: TranslateModule
+      ngModule: TranslateModule,
     };
   }
 }

@@ -10,9 +10,9 @@ describe('AppComponent', () => {
       imports: [
         HttpClientModule,
         RouterTestingModule,
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
       ],
-      declarations: [AppComponent]
+      declarations: [AppComponent],
     }).compileComponents();
   }));
 
