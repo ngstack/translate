@@ -41,7 +41,7 @@
     "@angular/cli": "^9.1.5",
     "@angular/compiler-cli": "^9.1.0",
     "@angular/language-service": "^9.1.6",
-    "@size-limit/preset-small-lib": "^4.4.5",
+    "@size-limit/preset-small-lib": "^4.5.0",
     "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "^13.13.5",
@@ -59,7 +59,7 @@
     "prettier": "^2.0.5",
     "protractor": "~5.4.4",
     "puppeteer": "^3.0.4",
-    "size-limit": "^4.4.5",
+    "size-limit": "^4.5.0",
     "ts-node": "~8.10.1",
     "tslint": "~6.1.2",
     "typescript": "3.8.3"
