@@ -42,7 +42,7 @@
     "@angular/compiler-cli": "^9.1.0",
     "@angular/language-service": "^9.1.9",
     "@size-limit/preset-small-lib": "^4.5.0",
-    "@types/jasmine": "~3.5.10",
+    "@types/jasmine": "~3.5.11",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "^14.0.11",
     "codelyzer": "^5.1.2",
