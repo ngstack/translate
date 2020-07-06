@@ -38,7 +38,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.7",
     "@angular-devkit/build-ng-packagr": "~0.901.7",
-    "@angular/cli": "^9.1.7",
+    "@angular/cli": "^10.0.1",
     "@angular/compiler-cli": "^9.1.0",
     "@angular/language-service": "^9.1.9",
     "@size-limit/preset-small-lib": "^4.5.0",
