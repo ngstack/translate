@@ -27,6 +27,7 @@ jobs:
         yarn install
         yarn lint --format=stylish
         yarn spellcheck
+        yarn format:check
         yarn test:ci
         yarn build:prod
         yarn size
