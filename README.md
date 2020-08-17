@@ -2,8 +2,6 @@
 
 Lightweight (±3KB) translation library for Angular applications.
 
-[![Build Status](https://dev.azure.com/ngstack/translate/_apis/build/status/ngstack.translate?branchName=master)](https://dev.azure.com/ngstack/translate/_build/latest?definitionId=1&branchName=master)
-
 [Live Demo](https://stackblitz.com/edit/ngstack-translate)
 
 <a href="https://www.buymeacoffee.com/denys" target="_blank">
