@@ -17,7 +17,7 @@
     "build:lib": "ng build translate",
     "build:prod": "ng build translate --prod && cp -r README.md dist/@ngstack/translate",
     "format:check": "prettier --check \"{src,projects}/**/*.{ts,js,css,scss,html}\"",
-    "format:fix": "prettier --write \"src/{src,projects}/**/*.{ts,js,css,scss,html}\"",
+    "format:fix": "prettier --write \"{src,projects}/**/*.{ts,js,css,scss,html}\"",
     "size": "size-limit"
   },
   "private": true,
@@ -55,7 +55,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "karma-junit-reporter": "^2.0.1",
     "ng-packagr": "^11.1.2",
-    "prettier": "^2.0.5",
+    "prettier": "^2.2.1",
     "protractor": "~7.0.0",
     "puppeteer": "^5.5.0",
     "size-limit": "^4.9.1",

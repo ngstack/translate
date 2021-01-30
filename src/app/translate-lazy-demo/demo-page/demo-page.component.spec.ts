@@ -8,12 +8,14 @@ describe('DemoPageComponent', () => {
   let component: DemoPageComponent;
   let fixture: ComponentFixture<DemoPageComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule, TranslateModule.forRoot()],
-      declarations: [DemoPageComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientModule, TranslateModule.forRoot()],
+        declarations: [DemoPageComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DemoPageComponent);
