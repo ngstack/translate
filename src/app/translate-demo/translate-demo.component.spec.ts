@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TranslateDemoComponent } from './translate-demo.component';
 import { TranslateModule } from '@ngstack/translate';
@@ -9,7 +9,7 @@ describe('TranslateDemoComponent', () => {
   let component: TranslateDemoComponent;
   let fixture: ComponentFixture<TranslateDemoComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, TranslateModule.forRoot()],
       declarations: [CustomTranslatePipe, TranslateDemoComponent],
