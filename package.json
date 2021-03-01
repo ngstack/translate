@@ -57,7 +57,7 @@
     "ng-packagr": "^11.2.2",
     "prettier": "^2.2.1",
     "protractor": "~7.0.0",
-    "puppeteer": "^7.1.0",
+    "puppeteer": "^8.0.0",
     "size-limit": "^4.9.2",
     "ts-node": "~9.1.1",
     "tslib": "^2.0.0",
