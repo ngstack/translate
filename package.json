@@ -7,7 +7,7 @@
   "scripts": {
     "postinstall": "ngcc",
     "ng": "ng",
-    "start": "ng build translate && ng serve",
+    "start": "ng build translate && ng serve --open",
     "build": "ng build",
     "test": "ng test translate --code-coverage",
     "test:ci": "ng test translate --watch=false --code-coverage",
