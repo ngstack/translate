@@ -69,7 +69,7 @@
   },
   "size-limit": [
     {
-      "path": "dist/@ngstack/translate/bundles/ngstack-translate.umd.min.js",
+      "path": "dist/@ngstack/translate/fesm2015/ngstack-translate.js",
       "limit": "5 KB",
       "webpack": false
     }
