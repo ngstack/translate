@@ -16,7 +16,8 @@
     "spellcheck": "cspell '{src,e2e,projects}/**/*.ts'",
     "format:check": "prettier --check \"{src,projects}/**/*.{ts,js,css,scss,html}\"",
     "format:fix": "prettier --write \"{src,projects}/**/*.{ts,js,css,scss,html}\"",
-    "size": "size-limit"
+    "size": "size-limit",
+    "clean": "rm -rf coverage dist node_modules"
   },
   "private": true,
   "dependencies": {
