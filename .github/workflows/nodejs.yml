@@ -29,7 +29,7 @@ jobs:
         yarn spellcheck
         yarn format:check
         yarn test:ci
-        yarn build:prod
+        yarn build
         yarn size
       env:
         CI: true
