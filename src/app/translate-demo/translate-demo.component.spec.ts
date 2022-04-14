@@ -9,14 +9,12 @@ describe('TranslateDemoComponent', () => {
   let component: TranslateDemoComponent;
   let fixture: ComponentFixture<TranslateDemoComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [HttpClientModule, TranslateModule.forRoot()],
-        declarations: [CustomTranslatePipe, TranslateDemoComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule, TranslateModule.forRoot()],
+      declarations: [CustomTranslatePipe, TranslateDemoComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TranslateDemoComponent);
