@@ -20,9 +20,7 @@ jobs:
     - name: Build and Test
       run: |
         npm ci
-        npm run lint
-        npm run spellcheck
-        npm run format:check
+        npm run verify
         npm run test:ci
         npm run build
         npm run size
