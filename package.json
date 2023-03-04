@@ -16,7 +16,6 @@
     "spellcheck": "cspell '{src,projects}/**/*.ts'",
     "format:check": "prettier --check \"{src,projects}/**/*.{ts,js,css,scss}\"",
     "format:fix": "prettier --write \"{src,projects}/**/*.{ts,js,css,scss}\"",
-    "size": "size-limit",
     "clean": "rm -rf coverage dist node_modules"
   },
   "private": true,
@@ -44,7 +43,6 @@
     "@angular/cli": "^15.2.1",
     "@angular/compiler-cli": "^15.2.1",
     "@angular/language-service": "^15.2.1",
-    "@size-limit/preset-small-lib": "^8.2.4",
     "@types/jasmine": "~4.3.1",
     "@types/jasminewd2": "~2.0.9",
     "@types/node": "^18.14.6",
@@ -61,15 +59,7 @@
     "karma-jasmine-html-reporter": "^2.0.0",
     "ng-packagr": "^15.2.2",
     "prettier": "^2.8.4",
-    "size-limit": "^8.2.4",
     "tslib": "^2.5.0",
     "typescript": "4.9.5"
-  },
-  "size-limit": [
-    {
-      "path": "dist/@ngstack/translate/fesm2020/ngstack-translate.mjs",
-      "limit": "5 KB",
-      "webpack": false
-    }
-  ]
+  }
 }
