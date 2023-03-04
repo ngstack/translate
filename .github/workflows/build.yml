@@ -2,34 +2,29 @@ name: build
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
-    branches:
-      - master
+    branches: [master]
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+        node-version: 14
+        cache: 'npm'
+    - name: Build and Test
       run: |
-        yarn install
-        yarn lint --format=stylish
-        yarn spellcheck
-        yarn format:check
-        yarn test:ci
-        yarn build
-        yarn size
+        npm ci
+        npm run lint --format=stylish
+        npm run spellcheck
+        npm run  format:check
+        npm run test:ci
+        npm run build
+        npm run size
       env:
         CI: true
