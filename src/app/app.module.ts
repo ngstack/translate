@@ -34,9 +34,8 @@ export function setupTranslateService(service: TranslateService) {
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, {
-      initialNavigation: 'enabled',
-      relativeLinkResolution: 'legacy',
-    }),
+    initialNavigation: 'enabled'
+}),
     HttpClientModule,
     TranslateModule.forRoot(),
     MatButtonModule,
