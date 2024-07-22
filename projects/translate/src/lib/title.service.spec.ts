@@ -13,7 +13,7 @@ describe('TitleService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers: [TitleService, TranslateService, Title],
+      providers: [TitleService, TranslateService, Title]
     });
 
     translateService = TestBed.inject(TranslateService);

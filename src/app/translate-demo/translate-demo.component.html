@@ -1,8 +1,10 @@
 <h3>Translate</h3>
 
-<button mat-raised-button (click)="changeLang('en')">EN</button>
-<button mat-raised-button (click)="changeLang('fr')">FR</button>
-<button mat-raised-button (click)="changeLang('unknown')">Unknown</button>
+<div style="display: flex; flex-direction: row; column-gap: 4px">
+  <button (click)="changeLang('en')">EN</button>
+  <button (click)="changeLang('fr')">FR</button>
+  <button (click)="changeLang('unknown')">Unknown</button>
+</div>
 
 <p>
   {{ 'TITLE' | translate }}

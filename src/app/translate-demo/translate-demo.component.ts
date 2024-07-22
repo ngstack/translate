@@ -3,8 +3,7 @@ import { TranslateService } from '@ngstack/translate';
 
 @Component({
   selector: 'app-translate-demo',
-  templateUrl: './translate-demo.component.html',
-  styleUrls: ['./translate-demo.component.css'],
+  templateUrl: './translate-demo.component.html'
 })
 export class TranslateDemoComponent {
   constructor(private translate: TranslateService) {}

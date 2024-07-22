@@ -10,7 +10,7 @@ describe('TranslatePipe', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers: [TranslateService],
+      providers: [TranslateService]
     });
 
     translate = TestBed.inject(TranslateService);

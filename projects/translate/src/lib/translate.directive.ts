@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[translate]',
+  selector: '[translate]'
 })
 export class TranslateDirective implements OnInit, OnDestroy {
   private onDestroy$ = new Subject<boolean>();
