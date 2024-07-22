@@ -2,8 +2,6 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngstack/translate';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -35,9 +33,7 @@ export function setupTranslateService(service: TranslateService) {
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    TranslateModule.forRoot(),
-    MatButtonModule,
-    MatSelectModule,
+    TranslateModule.forRoot()
   ],
   declarations: [AppComponent, TranslateDemoComponent, CustomTranslatePipe],
   providers: [
