@@ -4,7 +4,7 @@ import { TranslateService } from './translate.service';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class TitleService {
   private _titleKey = '';
@@ -35,7 +35,7 @@ export class TitleService {
 
       this.changed.next({
         previousValue: previousValue,
-        currentValue: newValue,
+        currentValue: newValue
       });
     }
   }

@@ -3,7 +3,7 @@ import {
   EventEmitter,
   Inject,
   InjectionToken,
-  Optional,
+  Optional
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateSettings } from './translate.settings';
@@ -17,7 +17,7 @@ export interface TranslateParams {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class TranslateService {
   protected data: { [key: string]: any } = {};
@@ -95,7 +95,7 @@ export class TranslateService {
       this.use(newValue).then(() => {
         this.activeLangChanged.next({
           previousValue: previousValue,
-          currentValue: newValue,
+          currentValue: newValue
         });
       });
     }
@@ -137,7 +137,7 @@ export class TranslateService {
       supportedLangs,
       translatePaths,
       translationRoot,
-      activeLang,
+      activeLang
     } = this;
 
     const defaults = {
@@ -147,7 +147,7 @@ export class TranslateService {
       translatePaths,
       translationRoot,
       activeLang,
-      ...settings,
+      ...settings
     };
 
     this.debugMode = defaults.debugMode;

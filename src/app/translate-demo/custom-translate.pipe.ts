@@ -3,7 +3,7 @@ import { TranslateService } from '@ngstack/translate';
 
 @Pipe({
   name: 'myTranslate',
-  pure: false,
+  pure: false
 })
 export class CustomTranslatePipe implements PipeTransform {
   constructor(private translate: TranslateService) {}
