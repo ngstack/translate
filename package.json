@@ -5,8 +5,6 @@
   "license": "MIT",
   "author": "Denys Vuika <denys.vuika@gmail.com>",
   "scripts": {
-    "postinstall": "ngcc",
-    "ng": "ng",
     "start": "ng build translate && ng serve app --open",
     "build": "ng build translate --configuration=production && cp -r README.md dist/@ngstack/translate",
     "test": "ng test translate --code-coverage",
