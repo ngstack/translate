@@ -48,6 +48,7 @@ npm install @ngstack/translate
 |--------------------|---------|
 | 8.0.0              | 15      |
 | 9.0.0              | 16      |
+| 10.0.0             | 17      |
 
 ## Using with the application
 
