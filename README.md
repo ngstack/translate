@@ -42,6 +42,13 @@ Lightweight (±3KB) translation library for Angular applications.
 npm install @ngstack/translate
 ```
 
+### Compatibility with Angular
+
+| @ngstack/translate | Angular |
+|--------------------|---------|
+| 8.0.0              | 15      |
+| 9.0.0              | 16      |
+
 ## Using with the application
 
 Create `en.json` file in the `src/app/assets/i18n` folder of your application.
