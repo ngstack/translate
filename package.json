@@ -43,7 +43,7 @@
     "@types/node": "^20.14.11",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "cspell": "^8.11.0",
+    "cspell": "^8.13.1",
     "eslint": "^8.57.0",
     "jasmine-core": "~4.6.1",
     "jasmine-spec-reporter": "~7.0.0",
